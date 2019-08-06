@@ -1,0 +1,103 @@
+<! DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "ancho = ancho del dispositivo, escala inicial = 1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie = edge">
+    <Link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integridad = "SHA384-ggOyR0iXCbMQv3Xipma34MD + dH / 1fQ784 / j6cY / iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anónimo">
+    <title> tabla de finonacci </title>
+</head>
+<cuerpo>
+    <h1> TABLA DE FIBONACCI </h1>
+    <br> <br>
+    <div id = "registro">
+            Primero: <input type = "text" name = "primer" id = "primero">
+            <br>
+            Segundo: <input type = "text" name = "segundo" id = "segundo">
+            <br>
+            Maximo: <input type = "text" name = "maximo" id = "maximo">
+            <br> <br>
+            <input type = "button" value = "Generar" id = "btnGenerar">
+            <br>
+
+             <tbody id = "tbody">
+  
+    <div id = "tablas" class = "table table-striped">
+            <table id = "tabla" border = "1">
+
+                    <tbody id = "tbody">
+            
+                   </tbody>
+                </table>
+       </div>
+</body>
+ <script>
+    función Solver (primero, segundo, maximo) {
+    this.primero = primero;
+    this.segundo = segundo;
+    this.maximo = maximo;
+    this.serie = [];
+    this.generar = generar;
+
+    función generar () {
+        this.serie.push (this.primero)
+        this.serie.push (this.segundo);
+    }
+
+}
+
+var lista = [];
+var generar = función (anterior, ultimo) {
+    if (anterior + ultimo> maximo) {
+        volver lista;
+    } más {
+        nuevo = anterior + ultimo;
+        lista.push (nuevo);
+        volver generar (ultimo, nuevo);
+    }
+}
+document.getElementById ("btnGenerar")
+.addEventListener ("click", function () {
+        primero = parseInt (document.getElementById ("primero"). value);
+        segundo = parseInt (document.getElementById ("segundo"). value);
+        maximo = parseInt (document.getElementById ("maximo"). value);
+        lista.push (primero);
+        lista.push (segundo);
+        generar (primero, segundo);
+
+    }
+);
+
+
+        var x = 0;
+        var tablas = document.getElementById ("tbody");
+document.getElementById ("btnGenerar")
+.addEventListener ("click", function muestra () {
+if (x === lista.length) {
+
+    volver muestra;
+}más{
+
+var tr = document.createElement ("tr");
+ // var tr1 = document.createElement ("tr");
+// var tr2 = document.createElement ("tr"); 
+var td = document.createElement ("td");
+// var td1 = document.createElement ("td")
+// var td2 = document.createElement ("td") 
+td.appendChild (document.createTextNode (lista [x]));
+//td1.appendChild(document.createTextNode(lista[x+1]));
+//td2.appendChild(document.createTextNode(lista[x+2])); 
+
+tr.appendChild (td,);
+//tr.appendChild(td1);
+//tr.appendChild(td2); 
+tablas.appendChild (tr);
+//tablas.appendChild(tr1);
+//tablas.appendChild(tr2); 
+x ++;
+muestra (x);
+}
+    })
+
+</script>
+</html>
